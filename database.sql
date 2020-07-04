@@ -17,60 +17,6 @@ INSERT INTO "manufacturers" VALUES(7,'MSI');
 INSERT INTO "manufacturers" VALUES(8,'НПО Вектор');
 INSERT INTO "manufacturers" VALUES(9,'Acer');
 INSERT INTO "manufacturers" VALUES(10,'Digma');
-CREATE TABLE assemblies
-(
-	id integer not null
-		constraint assemblies_pk
-			primary key autoincrement,
-	title int
-);
-INSERT INTO "assemblies" VALUES(1,'Для ГУВД');
-INSERT INTO "assemblies" VALUES(2,'Для розницы');
-INSERT INTO "assemblies" VALUES(3,'На ветрину');
-INSERT INTO "assemblies" VALUES(4,'Дешёвый вариант');
-INSERT INTO "assemblies" VALUES(5,'Для промо акции');
-INSERT INTO "assemblies" VALUES(6,'Новогодний');
-INSERT INTO "assemblies" VALUES(7,'Оптовый');
-INSERT INTO "assemblies" VALUES(8,'Учебный');
-INSERT INTO "assemblies" VALUES(9,'Социальный');
-INSERT INTO "assemblies" VALUES(10,'Дорогой');
-CREATE TABLE parts
-(
-	id integer not null
-		constraint parts_pk
-			primary key autoincrement,
-	title int
-);
-INSERT INTO "parts" VALUES(1,'проц');
-INSERT INTO "parts" VALUES(2,'крутой проц');
-INSERT INTO "parts" VALUES(3,'крутанский проц');
-INSERT INTO "parts" VALUES(4,'материнка');
-INSERT INTO "parts" VALUES(5,'материнка с турбонаддувом');
-INSERT INTO "parts" VALUES(6,'кулер на проц');
-INSERT INTO "parts" VALUES(7,'кулер на проц с фонариками');
-INSERT INTO "parts" VALUES(8,'набор свистелок и перделок');
-INSERT INTO "parts" VALUES(9,'герлянда ёлочная в подарок');
-INSERT INTO "parts" VALUES(10,'память шустрая');
-INSERT INTO "parts" VALUES(11,'много памяти');
-INSERT INTO "parts" VALUES(12,'очень много памяти');
-INSERT INTO "parts" VALUES(13,'очень-очень много памяти');
-INSERT INTO "parts" VALUES(14,'памяти столько чтобы хром не вылетал');
-INSERT INTO "parts" VALUES(15,'материнка геймерская');
-INSERT INTO "parts" VALUES(16,'видяха чтобы моник работал');
-INSERT INTO "parts" VALUES(17,'видяха геймерская');
-INSERT INTO "parts" VALUES(18,'видяха для майнинга');
-INSERT INTO "parts" VALUES(19,'клава обычная');
-INSERT INTO "parts" VALUES(20,'клава с подсветкой');
-INSERT INTO "parts" VALUES(21,'клава с канализацией для кофе');
-INSERT INTO "parts" VALUES(22,'мышка');
-INSERT INTO "parts" VALUES(23,'мышка оптическая');
-INSERT INTO "parts" VALUES(24,'мышка безпроводная');
-INSERT INTO "parts" VALUES(25,'резак');
-INSERT INTO "parts" VALUES(26,'дивиди резак');
-INSERT INTO "parts" VALUES(27,'монитор лучевой в подарок');
-INSERT INTO "parts" VALUES(28,'моник геймерский гнутый');
-INSERT INTO "parts" VALUES(29,'моник хороший');
-INSERT INTO "parts" VALUES(30,'память');
 CREATE TABLE assemblies_parts
 (
 	assembly_id integer not null,
@@ -187,9 +133,63 @@ INSERT INTO "computers" VALUES(7,6,'KU89',7774.0,0,7);
 INSERT INTO "computers" VALUES(8,5,'SP89',5468.0,0,8);
 INSERT INTO "computers" VALUES(9,7,'MERS600',3214.0,0,9);
 INSERT INTO "computers" VALUES(10,8,'Фёдор78',3000.0,1,10);
+CREATE TABLE "assemblies"
+(
+	id integer not null
+		constraint assemblies_pk
+			primary key autoincrement,
+	title text
+);
+INSERT INTO "assemblies" VALUES(1,'Для ГУВД');
+INSERT INTO "assemblies" VALUES(2,'Для розницы');
+INSERT INTO "assemblies" VALUES(3,'На ветрину');
+INSERT INTO "assemblies" VALUES(4,'Дешёвый вариант');
+INSERT INTO "assemblies" VALUES(5,'Для промо акции');
+INSERT INTO "assemblies" VALUES(6,'Новогодний');
+INSERT INTO "assemblies" VALUES(7,'Оптовый');
+INSERT INTO "assemblies" VALUES(8,'Учебный');
+INSERT INTO "assemblies" VALUES(9,'Социальный');
+INSERT INTO "assemblies" VALUES(10,'Дорогой');
+CREATE TABLE "parts"
+(
+	id integer not null
+		constraint parts_pk
+			primary key autoincrement,
+	title text
+);
+INSERT INTO "parts" VALUES(1,'проц');
+INSERT INTO "parts" VALUES(2,'крутой проц');
+INSERT INTO "parts" VALUES(3,'крутанский проц');
+INSERT INTO "parts" VALUES(4,'материнка');
+INSERT INTO "parts" VALUES(5,'материнка с турбонаддувом');
+INSERT INTO "parts" VALUES(6,'кулер на проц');
+INSERT INTO "parts" VALUES(7,'кулер на проц с фонариками');
+INSERT INTO "parts" VALUES(8,'набор свистелок и перделок');
+INSERT INTO "parts" VALUES(9,'герлянда ёлочная в подарок');
+INSERT INTO "parts" VALUES(10,'память шустрая');
+INSERT INTO "parts" VALUES(11,'много памяти');
+INSERT INTO "parts" VALUES(12,'очень много памяти');
+INSERT INTO "parts" VALUES(13,'очень-очень много памяти');
+INSERT INTO "parts" VALUES(14,'памяти столько чтобы хром не вылетал');
+INSERT INTO "parts" VALUES(15,'материнка геймерская');
+INSERT INTO "parts" VALUES(16,'видяха чтобы моник работал');
+INSERT INTO "parts" VALUES(17,'видяха геймерская');
+INSERT INTO "parts" VALUES(18,'видяха для майнинга');
+INSERT INTO "parts" VALUES(19,'клава обычная');
+INSERT INTO "parts" VALUES(20,'клава с подсветкой');
+INSERT INTO "parts" VALUES(21,'клава с канализацией для кофе');
+INSERT INTO "parts" VALUES(22,'мышка');
+INSERT INTO "parts" VALUES(23,'мышка оптическая');
+INSERT INTO "parts" VALUES(24,'мышка безпроводная');
+INSERT INTO "parts" VALUES(25,'резак');
+INSERT INTO "parts" VALUES(26,'дивиди резак');
+INSERT INTO "parts" VALUES(27,'монитор лучевой в подарок');
+INSERT INTO "parts" VALUES(28,'моник геймерский гнутый');
+INSERT INTO "parts" VALUES(29,'моник хороший');
+INSERT INTO "parts" VALUES(30,'память');
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('parts',30);
 INSERT INTO "sqlite_sequence" VALUES('manufacturers',10);
-INSERT INTO "sqlite_sequence" VALUES('assemblies',10);
 INSERT INTO "sqlite_sequence" VALUES('computers',10);
+INSERT INTO "sqlite_sequence" VALUES('assemblies',10);
+INSERT INTO "sqlite_sequence" VALUES('parts',30);
 COMMIT;
