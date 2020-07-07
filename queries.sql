@@ -6,15 +6,18 @@
 select * from computers;
 
 -- ### Все ноутбуки
+    -- Осваиваем: Поиск данных
 select * from computers
     where is_notebook = true;
 
 -- ### Десктопы дороже 3000 и дешевле 5000
+    -- Осваиваем: Отбор записей используя фильтр
 select * from computers
     where is_notebook = false
         and cost between 3000 and 5000;
 
 -- ### Получение всей информации о компьютерах из предыдущего запроса
+    -- Осваиваем: Сортировка данных
 select m.title as manufacturer, c.*
     from (select c.title as title, cost, a.title as assembly,
             group_concat(p.title) as parts, manufacturer_id
@@ -67,6 +70,7 @@ begin transaction;
 commit;
 
 -- ### Понижение цены сборки компьютера
+    -- Осваиваем: Корректировка данных
 update computers set cost = cost - 1000 where title = 'SK123';
 
 -- ### Удаление компьютера из ассортимента
