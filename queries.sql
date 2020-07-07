@@ -80,6 +80,5 @@ commit;
 -- ## Эффективность
 
 -- ### Добавляем индекс в таблицу связи сборок и запчастей
-
 create index if not exists assemblies_parts_idx
     ON assemblies_parts (assembly_id, part_id);
