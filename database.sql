@@ -1,5 +1,5 @@
 PRAGMA foreign_keys=OFF;
-BEGIN TRANSACTION;
+--BEGIN TRANSACTION;
 CREATE TABLE manufacturers
 (
 	id integer not null
@@ -192,4 +192,4 @@ INSERT INTO "sqlite_sequence" VALUES('manufacturers',10);
 INSERT INTO "sqlite_sequence" VALUES('computers',10);
 INSERT INTO "sqlite_sequence" VALUES('assemblies',10);
 INSERT INTO "sqlite_sequence" VALUES('parts',30);
-COMMIT;
+--COMMIT;
