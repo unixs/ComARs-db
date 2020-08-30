@@ -139,3 +139,24 @@ when OLD.cost != NEW.cost
     begin
         insert into cost_history (id, old_cost, new_cost) values (OLD.id, OLD.cost, NEW.cost);
     end;
+
+
+-- 16) Пример индекса
+create index computers_manufacturer_id_index
+	on computers (manufacturer_id);
+
+
+-- 17) Пример внешнего индекса сщ ссылкой на ключевой столбец таблицы производителей
+create table computers
+(
+    id              integer not null
+        constraint computers_pk
+            primary key autoincrement,
+    manufacturer_id int     not null
+        references manufacturers
+            on update cascade on delete restrict,
+    title           text    not null,
+    cost            real    not null,
+    is_notebook     boolean default 0 not null,
+    assembly_id     integer not null
+);
